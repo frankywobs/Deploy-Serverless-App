@@ -70,7 +70,7 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
     throw new Error('The JWKS endpoint did not contain any keys')
   }
   //get pem data
-  const pemData = signingKey.x5c[0]
+  const pemData = signingKeys.x5c[0]
  // convert pem data to cert 
  const cert = `-----BEGIN CERTIFICATE-----\n${pemData}\n-----END CERTIFICATE-----`
  // verify token

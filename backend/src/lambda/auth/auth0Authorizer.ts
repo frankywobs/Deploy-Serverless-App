@@ -74,7 +74,7 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
  // convert pem data to cert 
  const cert = `-----BEGIN CERTIFICATE-----\n${pemData}\n-----END CERTIFICATE-----`
  // verify token
- const verifiedToken = verify(token, cert, { a,gorithms: ['RS256']}) as JwtPayload
+ const verifiedToken = verify(token, cert, {algorithms: ['RS256']}) as JwtPayload
  logger.info('verifiedToken', verifiedToken)
  return verifiedToken
 
